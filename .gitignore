@@ -7,8 +7,7 @@ ranger/__pycache__/devicons.cpython-310.pyc
 ranger/rifle.conf-ori
 ranger/commands_full.py
 ranger/rc.conf-ori
-#ranger/rifle.conf
-#ranger/rc.conf
+
 ranger/plugins/
 ranger/plugins/__pycache__/
 ranger/plugins/__pycache__/__init__.cpython-310.pyc
@@ -34,14 +33,14 @@ gtk-3.0/bookmarks
 DjVuLibre/
 DjVuLibre/DjView.conf
 QtProject.conf
-#README.md
+
 Kvantum/
 Kvantum/kvantum.kvconfig
 Kvantum/KvAdaptaDark#/
 Kvantum/KvAdaptaDark#/KvAdaptaDark#.kvconfig
 user-dirs.dirs
 nrvim/
-#nrvim/init.lua
+
 electron-flags.conf
 BraveSoftware/
 locale.conf
@@ -79,9 +78,9 @@ Code - OSS/
 Code - OSS/User/
 Code - OSS/User/settings.json
 fontconfig/
-fontconfig/fonts.conf
+
 fontconfig/conf.d/
-fontconfig/conf.d/01-fonts.conf
+
 fontconfig/fonts.conf.back
 chrome-dev-flags.conf -> ./chrome-flags.conf
 gh/
@@ -98,13 +97,13 @@ waybar/backup/
 waybar/backup/style.css
 waybar/backup/config.jsonc-doublebar
 waybar/backup/config.jsonc
-#waybar/style.css
+
 waybar/style.css.example
-#waybar/config.jsonc
+
 chrome-flags.conf
 mimeapps.list
 nvim/
-#nvim/init.lua
+
 nvim/init.lua-ori
 nvim/LICENSE
 nvim/lua/
@@ -136,10 +135,10 @@ nvim/plugin/packer_compiled.lua
 discord/
 foot/
 foot/foot.ini.example
-#foot/foot.ini
+
 sway/
 sway/themes/
-#sway/themes/nice-custom
+
 sway/themes/matcha-green/
 sway/themes/matcha-green/definitions
 sway/config_
@@ -154,9 +153,9 @@ sway/definitions.d/definitions.confi
 sway/config.d/
 sway/config.d/README.md
 sway/config.d/XX-keyboard.conf.example
-#sway/config.d/01-keyboard.conf
+
 sway/help.man
-#sway/config
+
 REAPER/
 keepassxc/
 keepassxc/keepassxc.ini
@@ -185,3 +184,5 @@ zsh/.zcompdump
 zsh/.zcompdump-juanro-2349-5.9
 zsh/.zshrc
 ibus/
+ibus/bus
+ibus/bus/91902e2a960a4a1cb69e6e11578602f2-unix-wayland-1
