@@ -1,0 +1,63 @@
+# based on Base16 Seti UI
+# Author: Appelgriebsch
+
+# background image
+# output HDMI-A-1 bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output HDMI-A-1 background /usr/share/backgrounds/manjaro-sway/gruvbox-dark-manjarosway-3840x2160.png fill
+
+# output LVDS-1 bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1366x768.png fill
+# output LVDS-1 bg /usr/share/backgrounds/manjaro-sway/gruvbox-dark-manjarosway-3840x2160.png fill
+
+# some global theme specific variables
+set $gtk-theme Matcha-dark-sea
+set $icon-theme Papirus-Dark-Maia
+set $cursor-theme xcursor-breeze
+set $gui-font LiterationSans Nerd Font 11
+set $term-font RobotoMono Nerd Font 11
+set $kvantum-theme Matcha-Dark
+
+set $color0  #141a1b
+set $color1  #282a2b
+set $color2  #3B758C
+set $color3  #41535B
+set $color4  #43a5d5
+set $color5  #d6d6d6
+set $color6  #eeeeee
+set $color7  #ffffff
+set $color8  #Cd3f45
+set $color9  #db7b55
+set $color10 #e6cd69
+set $color11 #9fca56
+set $color12 #16a085
+set $color13 #55b5db
+set $color14 #a074c4
+set $color15 #8a553f
+set $color16 #000000
+set $color17 #009080
+
+#set $border-color $color0
+set $background #000000
+# set $background $color0
+set $background-color $color0
+set $text-color $color6
+# set $indicator-color $color8
+# set $child-border-color $color12
+set $selection-color $color1
+set $accent-color $color12
+
+
+# Basic color configuration using the Base16 variables for windows and borders.
+#client.focused $border-color $background-color $text-color $indicator-color $child-border-color
+
+# Property Name           Border  BG      Text    Indicator Child Border
+
+client.focused            #9fca56 #9fca56 #000000 #16a085 #000000
+
+client.focused_inactive   #41535B #41535B #000000 #16a085 #000000
+
+client.focused_tab_title  #16a085 #16a085 #000000 #16a085 #16a085
+
+client.unfocused          #a074c4 #41535B #000000 #16a085 #000000
+
+client.urgent             #16a085 #16a085 #000000 #16a085 #16a085
+

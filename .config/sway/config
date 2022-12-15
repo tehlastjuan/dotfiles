@@ -1,0 +1,48 @@
+# Sway config -`man 5 sway` for a complete reference.
+
+### variables
+set $theme $HOME/.config/sway/themes
+set $statusbar waybar
+set $waybar_position top
+set $mon1 HDMI-A-3
+set $filexp $term_float ranger
+
+### includes
+include $theme/onedark
+include $HOME/.config/sway/config.d/*.conf
+include $HOME/.config/sway/definitions.d/*.conf
+include $HOME/.config/sway/definitions.d/definitions
+# include /etc/sway/modes/*
+# include /etc/sway/config.d/*
+# include /etc/sway/definitions
+# include /etc/sway/inputs/*
+# include /etc/sway/outputs/*
+
+### output
+# output $mon1 pos 1920 0 res 1366x768
+output $mon1 pos 0 0 res 1920x1080
+
+# borders
+gaps outer 0
+gaps inner 0
+smart_gaps on
+default_border pixel 2
+default_floating_border pixel 0
+hide_edge_borders none
+font pango:monospace 0
+titlebar_border_thickness 0
+titlebar_padding 2
+set $waybar_position top
+
+### swayidle
+exec swayidle -w \
+    timeout 240 'light -G > /tmp/brightness && light -S 10' resume 'light -S $([ -f /tmp/brightness ] && cat /tmp/brightness || echo 100%)' \
+    timeout 300 '~/.config/sway/scripts/swaylock.sh' \
+    timeout 420 'systemctl suspend' \
+    before-sleep '~/.config/sway/scripts/swaylock.sh & system suspend;' \
+    after-resume 'swaymsg "output * dpms on"' \
+    &
+
+bindsym $mod+k exec bash $HOME/.config/sway/scripts/swaylock.sh
+bindsym $mod+i inhibit_idle visible
+bindsym $mod+Pause exec bash $HOME/.config/sway/scripts/mictoggle.sh
