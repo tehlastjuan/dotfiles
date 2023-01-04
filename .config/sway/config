@@ -46,3 +46,6 @@ exec swayidle -w \
 bindsym $mod+k exec bash $HOME/.config/sway/scripts/swaylock.sh
 bindsym $mod+i inhibit_idle visible
 bindsym $mod+Pause exec bash $HOME/.config/sway/scripts/mictoggle.sh
+bindsym $mod+End exec $volume_mute
+bindsym $mod+Page_Up exec $volume_up
+bindsym $mod+Page_Down exec $volume_down

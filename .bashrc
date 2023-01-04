@@ -165,7 +165,15 @@ crc ()
     echo "No .c file found";
   fi
 }
+
 eval $(keychain --eval --quiet --noask --agents ssh id_ed25519 id_rsa)
+
+# make & run cando
+crcao(){
+  clear;
+  make;
+  ./cando;
+}
 
 push(){
   git add .;

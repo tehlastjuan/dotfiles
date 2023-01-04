@@ -136,8 +136,6 @@ window#waybar {
  * Module styles
  * -------------------------------------------------------------------------- */
 
-
-
 #custom-scratchpad, #custom-menu {
     color: @theme_bg_color;
     background-color: @theme_selected_bg_color;
@@ -235,9 +233,21 @@ window#waybar {
     color: @warning_color;
 }
 
+#pulseaudio {
+    color: @wm_icon_bg;
+}
+
 #pulseaudio.muted {
     color: @warning_color;
 }
+
+#pulseaudio.source {
+    color: @wm_icon_bg;
+}
+
+#pulseaudio.source-muted {
+    color: @warning_color;
+} 
 
 #temperature.critical {
     color: @error_color;

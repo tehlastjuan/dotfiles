@@ -48,7 +48,7 @@
         "format-icons": ["", "", "", "", ""],
         "format": "{icon}",
         //"format-charging": "",
-        "format-charging": "",
+        "format-charging": "",
         "format-time": "{H}h{M}m",
         //"format-discharging": "{time}",
         "format-discharging": "{icon}",
@@ -124,11 +124,11 @@
         "scroll-step": 5,
         "format": "{icon} {format_source}",
         "format-muted": "婢 {format_source}",
-        "format-source": "on",
+        "format-source": " ",
         "format-source-muted": " ",
         "format-icons": {
-            "headphone": "",
-            "headset": "",
+            //"headphone": "",
+            //"headset": "",
             "default": ["奄", "奔", "墳"]
         },
         "tooltip-format": "{volume}% {format_source}",
