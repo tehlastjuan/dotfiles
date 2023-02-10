@@ -149,6 +149,9 @@ eval $(keychain --eval --quiet --noask --agents ssh id_ed25519 id_rsa)
 # zoxide on start
 eval "$(zoxide init bash)"
 
+# starship
+eval "$(starship init bash)"
+
 # gcc compiler shortcut
 cr () 
 { 
@@ -176,12 +179,12 @@ crc ()
 # note taking
 n()
 {
-  filename="$(date +%U-%y%m%d-%H%M)";
+  filename="$(date +%U-%y%m%d-%H%M%S)";
   nvim ~/.notes/"${filename}.md";
 }
 nn()
 {
-  filename="$(date +%U-%y%m%d-%H%M)";
+  filename="$(date +%U-%y%m%d-%H%M%S)";
   nvim "${filename}.md";
 }
 
