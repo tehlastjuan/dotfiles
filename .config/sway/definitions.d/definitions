@@ -13,18 +13,24 @@ set $notifications /usr/share/sway/scripts/mako.sh
 # application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-
-set $menu rofi -show combi -combi-modi "drun,run" -terminal $term -ssh-command "{terminal} {ssh-client} {host} [-p {port}]" -run-shell-command "{terminal} {cmd}" -show-icons -font "$gui-font" -lines 10 -width 35 -theme-str $rofi_theme
+#set $menu rofi -show combi -combi-modi "drun,run" -terminal $term -ssh-command "{terminal} {ssh-client} {host} [-p {port}]" -run-shell-command "{terminal} {cmd}" -show-icons -font "$gui-font" -lines 10 -width 35 -theme-str $rofi_theme
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# set $menu $term_float sway-launcher-desktop
+# set $menu exec $term -a launcher -e env TERMINAL=foot sway-launcher-desktop
+set $menu exec $term -a launcher sway-launcher-desktop
+
+# launcher theme
+#set $menu_theme "{client.focused #e06c75 #e06c75 #1e222a #56b6c2 #353b45}"
 
 # rofi theme
-set $rofi_theme "* {lightbg: $background-color; background: $background-color; lightfg: $accent-color; foreground: $text-color;}"
+#set $rofi_theme "* {lightbg: $background-color; background: $background-color; lightfg: $accent-color; foreground: $text-color;}"
 
 # onscreen bar
 set $onscreen_bar bash /usr/share/sway/scripts/wob.sh "$accent-colorFF" "$background-colorFF"
 
 # bluetooth menu
-set $rofi_bluetooth /usr/share/sway/scripts/rofi-bluetooth.sh $rofi_theme
+#set $rofi_bluetooth /usr/share/sway/scripts/rofi-bluetooth.sh $rofi_theme
+set $bluetooth-tui $term_float bluetuith
 
 # pulseaudio command
 set $pulseaudio $term_float pulsemixer

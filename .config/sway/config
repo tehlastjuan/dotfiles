@@ -4,8 +4,7 @@
 set $theme $HOME/.config/sway/themes
 set $statusbar waybar
 set $waybar_position top
-set $mon1 HDMI-A-3
-set $filexp $term_float ranger
+set $mon1 HDMI-A-1
 
 ### includes
 include $theme/onedark
@@ -26,12 +25,13 @@ output $mon1 pos 0 0 res 1920x1080
 gaps outer 0
 gaps inner 0
 smart_gaps on
-default_border pixel 2
-default_floating_border pixel 0
+smart_borders on
+default_border pixel 1
+default_floating_border pixel 1
 hide_edge_borders none
-font pango:monospace 0
+font pango: monospace 0.1
 titlebar_border_thickness 0
-titlebar_padding 2
+titlebar_padding 0
 set $waybar_position top
 
 ### swayidle

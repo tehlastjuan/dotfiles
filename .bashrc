@@ -136,11 +136,18 @@ ex ()
   fi
 }
 
-alias cmap='cd ~/Documents/c-practice'
 alias r='. ranger'
-alias c='cd ~/Documents/'
+alias d='cd ~/Documents/'
 alias l='cd ~/Downloads/'
 alias x='cd ~/Dropbox/'
+alias j='cd ~/Documents/j-practice/'
+alias w='cd ~/Documents/w-practice/'
+
+# keychain on start
+eval $(keychain --eval --quiet --noask --agents ssh id_ed25519 id_rsa)
+
+# zoxide on start
+eval "$(zoxide init bash)"
 
 # gcc compiler shortcut
 cr () 
@@ -166,17 +173,18 @@ crc ()
   fi
 }
 
-eval $(keychain --eval --quiet --noask --agents ssh id_ed25519 id_rsa)
-
-# make & run cando
-crcao(){
-  clear;
-  make;
-  ./cando;
+# note taking
+n()
+{
+  filename="$(date +%U-%y%m%d-%H%M)";
+  nvim ~/.notes/"${filename}.md";
+}
+nn()
+{
+  filename="$(date +%U-%y%m%d-%H%M)";
+  nvim "${filename}.md";
 }
 
-push(){
-  git add .;
-  git commit -m "update";
-  git push;
-}
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

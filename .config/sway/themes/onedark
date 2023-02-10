@@ -48,13 +48,13 @@ set $accent-color $color12
 
 # Property Name           Border  BG      Text    Indicator Child Border
 
-client.focused            #e06c75 #e06c75 #1e222a #56b6c2 #1e222a
+client.focused            #e06c75 #1e222a #1e222a #56b6c2 #353b45
 
 client.focused_inactive   #353b45 #1e222a #1e222a #56b6c2 #1e222a
 
-client.focused_tab_title  #56b6c2 #56b6c2 #1e222a #56b6c2 #56b6c2
+client.focused_tab_title  #56b6c2 #1e222a #1e222a #56b6c2 #1e222a 
 
-client.unfocused          #353b45 #61afef #1e222a #56b6c2 #1e222a
+client.unfocused          #353b45 #1e222a #1e222a #56b6c2 #1e222a
 
-client.urgent             #56b6c2 #56b6c2 #1e222a #56b6c2 #56b6c2
+client.urgent             #56b6c2 #1e222a #1e222a #56b6c2 #1e222a
 

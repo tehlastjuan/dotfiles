@@ -55,21 +55,17 @@ button, label {
   all:unset;
 }
 
-label#window {
-    background: rgba(0,0,0,0);
-    color: @wm_icon_bg;
-    font-size: 13px;
-    padding-bottom: 1px;
-}
-
 /* The whole bar */
 window#waybar {
-    /* background: @theme_bg_color; */
-    /* color: rgba(255,255,255,1); */
-    color: @wm_icon_bg;
-    background: rgba(0,0,0,0);
-    font-size: 14px;
+  /* background: @theme_bg_color; */
+  /* background: rgba(0,0,0,0); */
+  /* color: rgba(255,255,255,1); */
+  color: @wm_icon_bg;
+  font-size: 14px;
+  /* border: 1px solid red; */
 }
+
+
 
 /* Each module */
 #custom-pacman,
@@ -81,7 +77,6 @@ window#waybar {
 #custom-zeit,
 #custom-dnd,
 #bluetooth,
-#clock,
 #cpu,
 #memory,
 #mode,
@@ -95,46 +90,96 @@ window#waybar {
 #custom-yewtube,
 #clock,
 #network,
-#workspaces,
-#custom-weather,
-#tray
-{
-    padding-left: 7px;
-    padding-right: 7px;
-    padding-bottom: 1px;
-    /*border: 1px solid red;*/
+#custom-weather {
+  padding-left: 7px;
+  padding-right: 7px;
+  /* border: 1px solid red; */
+}
+
+#network,
+#bluetooth,
+#pulseaudio,
+#idle_inhibitor {
+  /* margin-top: 1px; */
+  padding-bottom: 1px;
+  /* border: 1px solid red; */
+}
+
+#workspaces {
+  padding-left: 7px;
+  /* padding-right: 2px; */
+  /* border: 1px solid red; */
+}
+
+#workspaces button {
+  /* border-top: 2px solid transparent; */
+  /* To compensate for the top border and still have vertical centering */
+  /* padding-bottom: 3px; */
+  padding-left: 7px;
+  padding-right: 7px;
+  /* border: 1px solid green; */
+}
+
+label#window {
+  padding-left: 7px;
+  /* padding-right: 7px; */
+  /* padding-bottom: 1px; */
+  /* border: 1px solid red; */
 }
 
 #tray {
-    padding-right: 10px;
-    padding-bottom: 2px;
+  padding-right: 8px;
+  padding-bottom: 2px;
+  /* border: 1px solid green; */
 }
 
-#custom-yewtube {
-    padding-right: 12px;
-}
-
-#custom-weather{
-    padding-left: 5px;
-    padding-right: 8px;
-}
 #temperature {
-    padding-left: 5px;
-    padding-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
+
 #battery {
-    padding-left: 8px;
-    padding-right: 15px;
+  padding-left: 8px;
+  padding-right: 15px;
 }
+
 #network {
-    padding-right: 12px;
+  /* padding-left: 7px; */
+  padding-right: 15px;
 }
+
+#bluetooth {
+  padding-left: 7px;
+  padding-right: 8px;
+}
+
+#pulseaudio {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#idle_inhibitor {
+  padding-left: 7px;
+  padding-right: 8px;
+}
+
+#clock {
+  /* padding-left: 7px; */
+  padding-right: 11px;
+}
+
 
 
 
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
+
+label#window {
+/* background: rgba(0,0,0,0); */
+  color: @wm_icon_bg;
+  font-size: 13px;
+}
 
 #custom-scratchpad, #custom-menu {
     color: @theme_bg_color;
@@ -155,9 +200,7 @@ window#waybar {
 
 #battery.discharging {
     color: @warning_color;
-    /*color: rgba(255,0,0,1);
-    padding-left: 6px;
-    padding-right: 4px;*/
+    /*color: rgba(255,0,0,1);*/
 }
 
 #battery.warning {
@@ -179,13 +222,12 @@ window#waybar {
 }
 
 #clock {
-    font-weight: normal;
-    color: @wm_icon_bg;
-    /* background-color: @theme_selected_bg_color; */
-    background-color: rgba(0,0,0,0);
-    padding-left: 7px;
-    padding-right: 7px;
-    font-family: "RobotoMono Nerd Font", "Roboto Mono", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  /* color: @wm_icon_bg; */
+  /* background-color: @theme_selected_bg_color; */
+  /* background-color: rgba(0,0,0,0); */
+  font-family: "RobotoMono Nerd Font", "Roboto Mono", sans-serif;
 }
 
 #cpu.warning {
@@ -196,13 +238,10 @@ window#waybar {
     color: @error_color;
 }
 
-#custom-menu {
-    padding-left: 8px;
-    padding-right: 13px;
-}
 
 #idle_inhibitor.deactivated {
   color: @wm_icon_bg; 
+  padding-bottom: 2px;
 }
 
 #idle_inhibitor.activated {
@@ -258,14 +297,11 @@ window#waybar {
 }
 
 #workspaces button {
-    border-top: 2px solid transparent;
+    /* border-top: 2px solid transparent; */
     /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
+    /* padding-bottom: 3px; */
     /* color: @theme_selected_bg_color; */
     color: @wm_icon_bg;
-    
 }
 
 /* #workspaces button.focused {
@@ -281,7 +317,7 @@ window#waybar {
     /* border-bottom: 2px solid rgba(0,0,0,1);
     border-color: rgba(0,0,0,0); */  
     font-weight: bold;
-    /* color: #16a085; */
+    /* color: #e06c75; */
     color: rgba(223,245,242,1);
     background-color: rgba(0,0,0,0);
 }

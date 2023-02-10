@@ -5,9 +5,10 @@
     // -------------------------------------------------------------------------
 
     "layer": "top",
-    //"output": "LVDS-1",
     "height": 21,
     "position": "top",
+    // "mode": "overlay",
+    "mode": "dock",
 
     "modules-left": [
         "sway/workspaces",
@@ -22,10 +23,10 @@
         //"custom/github",
         //"sway/mode",
         "tray",
-        "custom/yewtube",
+        //"custom/yewtube",
         //"memory",
         //"cpu",
-        "temperature",
+        //"temperature",
         "battery",
         "network",
         "bluetooth",
@@ -62,7 +63,8 @@
     },
     "clock": {
         "interval": 60,
-        "format": "{:v%V:%e|%b|%Y %H:%M}",
+        //"format": "{:v%V:%e.%b.%Y %H:%M}",
+        "format": "{:%e.%b|%V %H:%M}",
         "format-calendar-weeks": "{w:%V}",
         "calendar-weeks-pos": "left",
         "tooltip": true,
@@ -108,16 +110,11 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "零",
-            "deactivated": "鈴"
+            // "activated": "零",
+            // "deactivated": "鈴"
+            "activated": "",
+            "deactivated": "󰓛"
         }
-    },
-
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": ["", "", ""],
-        "on-scroll-up": "swaymsg exec \\$brightness_up",
-        "on-scroll-down": "swaymsg exec \\$brightness_down"
     },
 
     "pulseaudio": {
@@ -149,7 +146,7 @@
 
       "tray": {
           "icon-size": 17,
-          "spacing": 14 
+          "spacing": 11 
       },
 
       "sway/window": {
@@ -174,7 +171,7 @@
       "bluetooth": {
           "format": "",
           "format-disabled": "",
-          "on-click": "swaymsg exec \\$rofi_bluetooth",
+          "on-click": "swaymsg exec \\$bluetooth-tui",
           "on-click-right": "rfkill toggle bluetooth",
           "tooltip-format": "{device_alias}",
           "tooltip-connected-battery": "{device_alias} {device_battery_percentage}%",
