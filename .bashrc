@@ -150,7 +150,7 @@ eval $(keychain --eval --quiet --noask --agents ssh id_ed25519 id_rsa)
 eval "$(zoxide init bash)"
 
 # starship
-eval "$(starship init bash)"
+# eval "$(starship init bash)"
 
 # gcc compiler shortcut
 cr () 

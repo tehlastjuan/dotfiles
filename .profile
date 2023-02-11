@@ -25,9 +25,6 @@ export TERMINAL_COMMAND=/usr/share/sway/scripts/foot.sh
 export TERM_CMD=/usr/share/sway/scripts/foot.sh
 export BROWSER=/usr/bin/brave
 
-# add default location for zeit.db
-export ZEIT_DB=~/.config/zeit.db
-
 # Disable hardware cursors. This might fix issues with
 # disappearing cursors
 export WLR_NO_HARDWARE_CURSORS=1
@@ -37,4 +34,9 @@ export RANGER_LOAD_DEFAULT_RC=false
 
 #bash 
 export HISTCONTROL="erasedups:ignorespace"
+
+
+
+# Added by Toolbox App
+export PATH="$PATH:/home/juanro/.local/share/JetBrains/Toolbox/scripts"
 
