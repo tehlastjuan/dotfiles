@@ -177,6 +177,13 @@ nn()
   nvim "${filename}.md";
 }
 
+#java compiler
+jc()
+{
+ javac -d ./bin src/breakout/*.java;
+ java -cp ./bin breakout.Program;
+}
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
