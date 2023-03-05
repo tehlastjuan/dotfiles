@@ -1,5 +1,5 @@
 require'colorizer'.setup()
-require('Comment').setup()
+-- require('Comment').setup()
 
 -- Web preview
 require'web-tools'.setup({

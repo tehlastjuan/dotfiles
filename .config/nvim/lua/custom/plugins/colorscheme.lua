@@ -1,0 +1,85 @@
+require('onedark').setup {
+    style = 'cool'
+}
+require('onedark').load()
+
+-- require("tokyonight").setup({
+--   --use
+--   style = "night",
+--   on_colors = function(colors)
+--     colors.bg = "#1e222a";
+--     colors.bg_dark = "#1e222a";
+--   end
+-- })
+--
+-- local colorscheme = "tokyonight-night"
+
+-- require('onedark').setup {
+--   -- colors = {
+--   --   black = "#1b1f27",
+--   --   bg0 = "#1e222a",
+--   --   bg1 = "#252931",
+--   --   bg2 = "#282c34",
+--   --   bg3 = "#373b43",
+--   --   bg_d = "#1b1c1e",
+--   --   bg_blue = "#68aee8",
+--   --   bg_yellow = "#e2c792",
+--   --   fg = "#abb2bf",
+--   --   purple = "#de98fd",
+--   --   green = "#98c379",
+--   --   orange = "#fca2aa",
+--   --   blue = "#61afef",
+--   --   yellow = "#e7c787",
+--   --   cyan = "#56b6c2",
+--   --   red = "#e06c75",
+--   --   grey = "#42464e",
+--   --   light_grey = "#6f737b",
+--   --   dark_cyan = "#519ABA",
+--   --   dark_red = "#be5046",
+--   --   dark_yellow = "#e5c07b",
+--   --   dark_purple = "#c882e7",
+--   --   diff_add = "#282b26",
+--   --   diff_delete = "#2a2626",
+--   --   diff_change = "#1a2a37",
+--   --   diff_text = "#2c485f",
+--   -- },
+--   colors = {
+--     white = "#abb2bf",
+--     darker_black = "#1b1f27",
+--     black = "#1e222a", --  nvim bg
+--     black2 = "#252931",
+--     one_bg = "#282c34", -- real bg of onedark
+--     one_bg2 = "#353b45",
+--     one_bg3 = "#373b43",
+--     grey = "#42464e",
+--     grey_fg = "#565c64",
+--     grey_fg2 = "#6f737b",
+--     light_grey = "#6f737b",
+--     red = "#e06c75",
+--     baby_pink = "#DE8C92",
+--     pink = "#ff75a0",
+--     line = "#31353d", -- for lines like vertsplit
+--     green = "#98c379",
+--     vibrant_green = "#7eca9c",
+--     nord_blue = "#81A1C1",
+--     blue = "#61afef",
+--     yellow = "#e7c787",
+--     sun = "#EBCB8B",
+--     purple = "#de98fd",
+--     dark_purple = "#c882e7",
+--     teal = "#519ABA",
+--     orange = "#fca2aa",
+--     cyan = "#a3b8ef",
+--     statusline_bg = "#22262e",
+--     lightbg = "#2d3139",
+--     pmenu_bg = "#61afef",
+--     folder_bg = "#61afef",
+--   },
+-- }
+
+-- local colorscheme = "onedark"
+
+-- local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+-- if not status_ok then
+--   return
+-- end

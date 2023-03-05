@@ -21,6 +21,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # set default shell and terminal
 export SHELL=/usr/bin/bash
+export TERMINAL=foot
 export TERMINAL_COMMAND=/usr/share/sway/scripts/foot.sh
 export TERM_CMD=/usr/share/sway/scripts/foot.sh
 export BROWSER=/usr/bin/brave
@@ -34,9 +35,3 @@ export RANGER_LOAD_DEFAULT_RC=false
 
 #bash 
 export HISTCONTROL="erasedups:ignorespace"
-
-
-
-# Added by Toolbox App
-export PATH="$PATH:/home/juanro/.local/share/JetBrains/Toolbox/scripts"
-
