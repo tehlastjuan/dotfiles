@@ -44,7 +44,13 @@ require('lazy').setup({
   -- Autocompletion
   {
     'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' }, },
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-buffer',
+    }, },
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
@@ -72,29 +78,6 @@ require('lazy').setup({
      vim.cmd.colorscheme 'onedark'
    end,
   },
-
-  -- { 'lukas-reineke/onedark.nvim' },
-
-  -- { 'NvChad/base46',
-  --   config = function()
-  --     local ok, base46 = pcall(require, "base46")
-  --
-  --     if ok then
-  --       base46.load_theme()
-  --     end
-  --   end,
-  -- },
-  --
-  -- { 'NvChad/ui',
-  --   after = "base46",
-  --   config = function()
-  --     local present, nvchad_ui = pcall(require, "nvchad_ui")
-  --
-  --     if present then
-  --       nvchad_ui.setup()
-  --     end
-  --   end,
-  -- },
 
   -- Set lualine as statusline
   {
@@ -204,7 +187,11 @@ require('lazy').setup({
   },
   --markdown preview
   {
-    'iamcco/markdown-preview.nvim'
+    'iamcco/markdown-preview.nvim',
+    ft = "markdown",
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
   },
   -- Import additional plugins
   -- { import = 'custom.plugins' },

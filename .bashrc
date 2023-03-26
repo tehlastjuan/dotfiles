@@ -181,6 +181,10 @@ nn()
 jc()
 {
  javac -d ./bin src/breakout/*.java;
+}
+
+jr()
+{
  java -cp ./bin breakout.Program;
 }
 
