@@ -129,8 +129,8 @@ alias l='cd ~/Downloads'
 alias x='cd ~/Dropbox'
 alias k='cd /keybase'
 alias j='cd ~/Documents/j-practice'
-alias w='cd ~/Documents/w-practice'
 alias js='cd ~/Documents/js-practice'
+alias ui='cd ~/Documents/ui-practice'
 
 # keychain on start
 eval $(keychain --eval --quiet --noask --agents ssh id_ed25519 id_rsa)
