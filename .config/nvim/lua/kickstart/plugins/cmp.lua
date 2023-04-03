@@ -2,6 +2,8 @@
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
+require("luasnip.loaders.from_vscode").lazy_load()
+
 luasnip.config.setup {}
 
 cmp.setup {
@@ -18,6 +20,7 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = false,
     },
+
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -27,6 +30,7 @@ cmp.setup {
         fallback()
       end
     end, { 'i', 's' }),
+
     ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -40,11 +44,18 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-    { name = 'path' },
     { name = 'buffer' },
+    { name = 'path' },
   },
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+-- https://github.com/neovim/nvim-lspconfig/blob/0bc0c38e1b11dfb6b5f1794d53869f89ccf9e78f/doc/server_configurations.md#html
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.html.setup {
+  capabilities = capabilities,
+}

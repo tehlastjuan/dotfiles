@@ -176,7 +176,7 @@ require('lazy').setup({
   -- Colorschemes
   -- { 'folke/tokyonight.nvim' },
   -- Snippets
-  -- { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
+  { 'rafamadriz/friendly-snippets' }, -- a bunch of snippets to use
   -- Colorizer,
   {
     'norcalli/nvim-colorizer.lua'

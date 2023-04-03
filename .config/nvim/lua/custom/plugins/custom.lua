@@ -17,4 +17,4 @@ require'web-tools'.setup({
   },
 })
 
-
+require'lspconfig'.html.setup{}
