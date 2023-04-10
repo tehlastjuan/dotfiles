@@ -54,8 +54,8 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- https://github.com/neovim/nvim-lspconfig/blob/0bc0c38e1b11dfb6b5f1794d53869f89ccf9e78f/doc/server_configurations.md#html
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-require'lspconfig'.html.setup {
-  capabilities = capabilities,
-}
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
+--
+-- require'lspconfig'.html.setup {
+--   capabilities = capabilities,
+-- }

@@ -188,6 +188,21 @@ jr()
  java -cp ./bin breakout.Program;
 }
 
+# texlive
+#
+# Welcome to TeX Live!
+#
+# See /usr/local/texlive/2023/index.html for links to documentation.
+# The TeX Live web site (https://tug.org/texlive/) contains any updates and corrections. TeX Live is a joint project of the TeX user groups around the world; please consider supporting it by joining the group best for you. The list of groups is available on the web at https://tug.org/usergroups.html.
+#
+# Add /usr/local/texlive/2023/texmf-dist/doc/man to MANPATH.
+# Add /usr/local/texlive/2023/texmf-dist/doc/info to INFOPATH.
+# Most importantly, add /usr/local/texlive/2023/bin/x86_64-linux to your PATH for current and future sessions.
+# Logfile: /usr/local/texlive/2023/install-tl.logxport
+export PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH
+export MANPATH=/usr/local/texlive/2023/texmf-dist/doc/man$MANPATH
+export INFOPATH=/usr/local/texlive/2023/texmf-dist/doc/info$INFOPATH
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

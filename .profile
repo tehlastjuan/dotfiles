@@ -33,5 +33,7 @@ export WLR_NO_HARDWARE_CURSORS=1
 # load ranger conf only once
 export RANGER_LOAD_DEFAULT_RC=false
 
-#bash 
+# bash 
 export HISTCONTROL="erasedups:ignorespace"
+
+
