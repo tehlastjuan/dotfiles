@@ -10,6 +10,7 @@ require"kickstart.options"
 require"custom.options"
 require"kickstart.keymaps"
 require"custom.keymaps"
+require"custom.on_attach"
 
 require"kickstart.plugins.lsp"
 require"kickstart.plugins.telescope"

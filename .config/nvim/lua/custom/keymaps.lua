@@ -28,8 +28,8 @@ keymap("n", "<S-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<A-Right>", ":bnext<CR>", opts)
-keymap("n", "<A-Left>", ":bprevious<CR>", opts)
+keymap("n", "<Alt-Right>", ":bnext<CR>", opts)
+keymap("n", "<Alt-Left>", ":bprevious<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)

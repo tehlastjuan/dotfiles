@@ -35,5 +35,3 @@ export RANGER_LOAD_DEFAULT_RC=false
 
 # bash 
 export HISTCONTROL="erasedups:ignorespace"
-
-
