@@ -17,4 +17,6 @@ require'web-tools'.setup({
   },
 })
 
+vim.g.mkdp_theme = 'dark'
+
 require'lspconfig'.html.setup{}

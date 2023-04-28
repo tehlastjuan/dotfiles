@@ -30,7 +30,7 @@ set $onscreen_bar bash /usr/share/sway/scripts/wob.sh "$accent-colorFF" "$backgr
 
 # bluetooth menu
 #set $rofi_bluetooth /usr/share/sway/scripts/rofi-bluetooth.sh $rofi_theme
-set $bluetooth-tui $term_float bluetuith
+set $bluetooth-tui $term_float -a bluetuth bluetuith
 
 # pulseaudio command
 set $pulseaudio $term_float pulsemixer

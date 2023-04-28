@@ -18,10 +18,7 @@ include $HOME/.config/sway/definitions.d/definitions
 # include /etc/sway/outputs/*
 
 ### output
-# output $mon1 pos 1920 0 res 1366x768
-output $mon1 pos 0 0 res 1920x1080
-floating_maximum_size 1024 x 800
-floating_minimum_size 1024 x 800
+output $mon1 pos 0 0 res 2560x1080
 
 # borders
 gaps outer 0
@@ -49,6 +46,6 @@ exec swayidle -w \
 # bindsym $mod+k exec bash $HOME/.config/sway/scripts/swaylock.sh
 # bindsym $mod+i inhibit_idle none
 bindsym $mod+Pause exec bash $HOME/.config/sway/scripts/mictoggle.sh
-# bindsym $mod+End exec $volume_mute
+bindsym $mod+End exec $volume_mute
 bindsym $mod+Page_Up exec $volume_up
 bindsym $mod+Page_Down exec $volume_down

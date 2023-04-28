@@ -26,8 +26,7 @@ export TERMINAL_COMMAND=/usr/share/sway/scripts/foot.sh
 export TERM_CMD=/usr/share/sway/scripts/foot.sh
 export BROWSER=/usr/bin/brave
 
-# Disable hardware cursors. This might fix issues with
-# disappearing cursors
+# Disable hardware cursors. This might fix issues with disappearing cursors
 export WLR_NO_HARDWARE_CURSORS=1
 
 # load ranger conf only once

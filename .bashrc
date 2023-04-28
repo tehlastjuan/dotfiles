@@ -23,7 +23,7 @@ use_color=true
 # instead of using /etc/DIR_COLORS.  Try to use the external file
 # first to take advantage of user additions.  Use internal bash
 # globbing instead of external grep binary.
-DIRCOL=~/.config/dircolors/coldark
+DIRCOL=~/.config/dircolors/dracula
 safe_term=${TERM//[^[:alnum:]]/?}   # sanitize TERM
 match_lhs=""
 [[ -f $DIRCOL   ]] && match_lhs="${match_lhs}$(<$DIRCOL)"
@@ -83,12 +83,18 @@ alias o='flatpak run md.obsidian.Obsidian'
 alias v='vlc --intf ncurses'
 alias d='cd ~/Documents'
 alias l='cd ~/Downloads'
-alias x='cd ~/Dropbox'
+alias p='cd ~/Projects'
 alias n='cd ~/.notes'
+alias s='cd ~/.screenshots/'
 alias k='cd ~/.keybase/private/tehracoon/'
 alias j='cd ~/Documents/j-practice'
 alias js='cd ~/Documents/js-practice'
 alias ui='cd ~/Documents/ui-practice'
+alias nd='cd ~/Documents/nd-practice'
+
+alias kbs='~/.scripts/onstart.sh'
+alias gpa='~/.scripts/git-pull-all.sh'
+alias gsa='~/.scripts/git-status-all.sh'
 
 # keychain on start
 eval $(keychain --eval --quiet --noask --agents ssh id_ed25519 id_rsa)

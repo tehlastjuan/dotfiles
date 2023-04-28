@@ -1,2 +1,0 @@
-# dotfiles
-$HOME config files

@@ -58,11 +58,9 @@ button, label {
 /* The whole bar */
 window#waybar {
   /* background: @theme_bg_color; */
-  /* background: rgba(0,0,0,0); */
-  /* color: rgba(255,255,255,1); */
+  background-color: #1e222a;
   color: @wm_icon_bg;
   font-size: 14px;
-  /* border: 1px solid red; */
 }
 
 
@@ -176,7 +174,7 @@ label#window {
  * -------------------------------------------------------------------------- */
 
 label#window {
-/* background: rgba(0,0,0,0); */
+  /* background: rgba(0,0,0,0); */
   color: @wm_icon_bg;
   font-size: 13px;
 }
