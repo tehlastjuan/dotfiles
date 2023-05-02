@@ -6,6 +6,9 @@
 
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
+# handy scripts
+source ~/.scripts/.bash-addons
+
 # Change the window title of X terminals
 case ${TERM} in
 	xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|konsole*)
@@ -15,15 +18,17 @@ case ${TERM} in
 		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\033\\"'
 		;;
 esac
-
 use_color=true
+
+# load dircolors theme
+DIRCOL=~/.config/dircolors/dracula
 
 # Set colorful PS1 only on colorful terminals.
 # dircolors --print-database uses its own built-in database
 # instead of using /etc/DIR_COLORS.  Try to use the external file
 # first to take advantage of user additions.  Use internal bash
 # globbing instead of external grep binary.
-DIRCOL=~/.config/dircolors/dracula
+
 safe_term=${TERM//[^[:alnum:]]/?}   # sanitize TERM
 match_lhs=""
 [[ -f $DIRCOL   ]] && match_lhs="${match_lhs}$(<$DIRCOL)"
@@ -77,73 +82,6 @@ shopt -s expand_aliases
 # Enable history appending instead of overwriting.
 shopt -s histappend
 
-alias r='. ranger'
-alias rd='rtv'
-alias o='flatpak run md.obsidian.Obsidian'
-alias v='vlc --intf ncurses'
-alias d='cd ~/Documents'
-alias l='cd ~/Downloads'
-alias p='cd ~/Projects'
-alias n='cd ~/.notes'
-alias s='cd ~/.screenshots/'
-alias k='cd ~/.keybase/private/tehracoon/'
-alias j='cd ~/Documents/j-practice'
-alias js='cd ~/Documents/js-practice'
-alias ui='cd ~/Documents/ui-practice'
-alias nd='cd ~/Documents/nd-practice'
-
-alias kbs='~/.scripts/onstart.sh'
-alias gpa='~/.scripts/git-pull-all.sh'
-alias gsa='~/.scripts/git-status-all.sh'
-
-# keychain on start
-eval $(keychain --eval --quiet --noask --agents ssh id_ed25519 id_rsa)
-
-# zoxide on start
-eval "$(zoxide init bash)"
-
-# gcc compiler shortcut
-cr () { 
-  clear;
-  if [ -n "$(find ./ -name "prog.c" 2>/dev/null)" ]; then
-    gcc -Wall -g 'prog.c' -lm -o 'prog.x';
-    ./prog.x;
-  else
-    echo "No .c file found";
-  fi
-}
-
-# gcc compiler shortcut CURSES
-crc () { 
-  clear;
-  if [ -n "$(find ./ -name "prog.c" 2>/dev/null)" ]; then
-    gcc -Wall -g 'prog.c' -lm -lncurses -o 'prog.x';
-    ./prog.x;
-  else
-    echo "No .c file found";
-  fi
-}
-
-# note taking
-nn() {
-  filename="$(date +%U-%y%m%d-%H%M%S)";
-  nvim ~/.notes/"${filename}.md";
-}
-
-nh() {
-  filename="$(date +%U-%y%m%d-%H%M%S)";
-  nvim "${filename}.md";
-}
-
-#java compiler
-jc() {
- javac -d ./bin src/breakout/*.java;
-}
-
-jr() {
- java -cp ./bin breakout.Program;
-}
-
 # texlive
 # See /usr/local/texlive/2023/index.html for links to documentation.
 # The TeX Live web site (https://tug.org/texlive/) contains any updates and corrections. 
@@ -157,12 +95,6 @@ export PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH
 export MANPATH=/usr/local/texlive/2023/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2023/texmf-dist/doc/info:$INFOPATH
 
-# Sigils darktheme
-export SIGIL_USES_DARK_MODE=1
-
-# run on start
-# source ~/.scripts/onstart.sh
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

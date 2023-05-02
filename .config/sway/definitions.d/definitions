@@ -1,6 +1,6 @@
 
 # basic apps
-#
+
 # terminal emulator
 set $term /usr/share/sway/scripts/foot.sh
 set $term_cwd $term -D "$(swaycwd 2>/dev/null || echo $HOME)"
@@ -11,19 +11,7 @@ set $term_float_portrait footclient -a floating_shell_portrait
 set $notifications /usr/share/sway/scripts/mako.sh 
 
 # application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-#set $menu rofi -show combi -combi-modi "drun,run" -terminal $term -ssh-command "{terminal} {ssh-client} {host} [-p {port}]" -run-shell-command "{terminal} {cmd}" -show-icons -font "$gui-font" -lines 10 -width 35 -theme-str $rofi_theme
-# set $menu dmenu_path | dmenu | xargs swaymsg exec --
-# set $menu $term_float sway-launcher-desktop
-# set $menu exec $term -a launcher -e env TERMINAL=foot sway-launcher-desktop
-set $menu exec $term -a launcher sway-launcher-desktop
-
-# launcher theme
-#set $menu_theme "{client.focused #e06c75 #e06c75 #1e222a #56b6c2 #353b45}"
-
-# rofi theme
-#set $rofi_theme "* {lightbg: $background-color; background: $background-color; lightfg: $accent-color; foreground: $text-color;}"
+set $menu exec $term -a launcher -e sway-launcher-desktop
 
 # onscreen bar
 set $onscreen_bar bash /usr/share/sway/scripts/wob.sh "$accent-colorFF" "$background-colorFF"
@@ -62,7 +50,7 @@ set $screenshot_selection_clipboard $grimshot --notify copy window
 set $screenshot_selection_file $grimshot --notify save window
 set $screenshot_selection_upload $screenshot_selection_file | xargs $image_upload
 
-### extra apps
+# extra apps
 
 # calendar application
 set $calendar $term_float khal interactive
@@ -72,9 +60,3 @@ set $zeit_list zeit list --only-projects-and-tasks --append-project-id-to-task |
     rofi -dmenu -font "$gui-font" -p "Select task to track" -lines 10 -width 35 -theme-str $rofi_theme | \
     /usr/share/sway/scripts/zeit.sh track && \
     pkill -RTMIN+10 waybar
-
-# yewtube app
-set $yewtube $term_float yt
-
-# help toggle
-set $help /usr/share/sway/scripts/help.sh --toggle

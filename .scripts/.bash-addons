@@ -1,0 +1,97 @@
+#!/bin/bash
+
+alias r='. ranger'
+alias rd='rtv'
+alias o='flatpak run md.obsidian.Obsidian'
+alias v='vlc --intf ncurses'
+alias d='cd ~/Documents'
+alias l='cd ~/Downloads'
+alias p='cd ~/Projects'
+alias n='cd ~/.notes'
+alias s='cd ~/.screenshots/'
+alias k='cd ~/.keybase/private/tehracoon/'
+alias j='cd ~/Documents/j-practice'
+alias js='cd ~/Documents/js-practice'
+alias ui='cd ~/Documents/ui-practice'
+alias nd='cd ~/Documents/nd-practice'
+
+# keychain on start
+eval $(keychain --eval --quiet --noask --agents ssh id_ed25519 id_rsa)
+
+# zoxide on start
+eval "$(zoxide init bash)"
+
+# start keybase w/o GUI
+kbs(){
+  run_keybase -g;
+}
+
+# new note
+nn() {
+  filename="$(date +%U-%y%m%d-%H%M%S)";
+  nvim ~/.notes/"${filename}.md";
+}
+
+# note ./here
+nh() {
+  filename="$(date +%U-%y%m%d-%H%M%S)";
+  nvim "${filename}.md";
+}
+
+# git-pull-all repos in ~/Documents
+gpa(){
+  find ~/Documents/ -path '**/.git/config' 2>/dev/null | \
+    sed 's/.git\/config//g' | \
+    xargs -I % sh -c 'echo""; tput bold; tput setaf 3; basename `git -C % rev-parse --show-toplevel`; \
+    tput sgr0;  echo "----------------------------------------"; \
+    git -C % pull'
+
+  tput bold && tput setaf 3 && echo "" && basename `git -C ~/.notes/ rev-parse --show-toplevel` && \
+    tput sgr0;  echo "----------------------------------------" && \
+    git -C ~/.notes/ pull && echo "" 
+}
+
+# git-status-all repos in ~/Documents
+gsa(){
+  find ~/Documents/ -path '**/.git/config' 2>/dev/null | \
+    sed 's/.git\/config//g' | \
+    xargs -I % sh -c 'echo ""; tput bold; tput setaf 3; git -C % rev-parse --show-toplevel; \
+    tput sgr0;  echo "----------------------------------------"; \
+    git -C % status'
+
+  tput bold && tput setaf 3 && echo "" && git -C ~/.notes/ rev-parse --show-toplevel && \
+    tput sgr0;  echo "----------------------------------------" && \
+    git -C ~/.notes/ status && echo ""
+}
+
+# gcc compiler & runner shortcut
+cr() { 
+  clear;
+  if [ -n "$(find ./ -name "prog.c" 2>/dev/null)" ]; then
+    gcc -Wall -g 'prog.c' -lm -o 'prog.x';
+    ./prog.x;
+  else
+    echo "No .c file found";
+  fi
+}
+
+# gcc compiler & runner NCURSES
+crc() { 
+  clear;
+  if [ -n "$(find ./ -name "prog.c" 2>/dev/null)" ]; then
+    gcc -Wall -g 'prog.c' -lm -lncurses -o 'prog.x';
+    ./prog.x;
+  else
+    echo "No .c file found";
+  fi
+}
+
+# java compiler
+jc() {
+ javac -d ./bin src/breakout/*.java;
+}
+
+# java runner
+jr() {
+ java -cp ./bin breakout.Program;
+}
